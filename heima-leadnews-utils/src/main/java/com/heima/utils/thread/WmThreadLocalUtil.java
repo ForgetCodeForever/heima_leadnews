@@ -1,4 +1,4 @@
-package com.heima.thread;
+package com.heima.utils.thread;
 
 import com.heima.model.wemedia.pojos.WmUser;
 

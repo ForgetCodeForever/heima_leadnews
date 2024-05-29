@@ -10,7 +10,7 @@ import com.heima.model.common.dtos.ResponseResult;
 import com.heima.model.common.enums.AppHttpCodeEnum;
 import com.heima.model.wemedia.dtos.WmMaterialDto;
 import com.heima.model.wemedia.pojos.WmMaterial;
-import com.heima.thread.WmThreadLocalUtil;
+import com.heima.utils.thread.WmThreadLocalUtil;
 import com.heima.wemedia.mapper.WmMaterialMapper;
 import com.heima.wemedia.service.WmMaterialService;
 import lombok.extern.slf4j.Slf4j;

@@ -1,7 +1,7 @@
 package com.heima.wemedia.interceptor;
 
 import com.heima.model.wemedia.pojos.WmUser;
-import com.heima.thread.WmThreadLocalUtil;
+import com.heima.utils.thread.WmThreadLocalUtil;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
