@@ -114,9 +114,9 @@ public class SensitiveWordUtil {
         List<String> list = new ArrayList<>();
         list.add("法轮");
         list.add("法轮功");
-        list.add("冰毒");
+        list.add("法轮大法");
         initMap(list);
-        String content="我是一个好人，并不会卖冰毒，也不操练法轮功,我真的不卖冰毒";
+        String content="法轮法轮功法轮大法";
         Map<String, Integer> map = matchWords(content);
         System.out.println(map);
     }
