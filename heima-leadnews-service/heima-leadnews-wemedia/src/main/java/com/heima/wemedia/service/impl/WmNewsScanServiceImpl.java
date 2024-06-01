@@ -16,6 +16,7 @@ import com.heima.wemedia.service.WmNewsScanService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,7 +32,17 @@ public class WmNewsScanServiceImpl implements WmNewsScanService {
     private WmNewsMapper wmNewsMapper;
 
     @Override
+    @Async  // 标明当前方法是一个异步方法
     public void scanWmNews(Integer id) {
+
+        // 这里我并没有出现错误
+        // 异步调用可能会导致:
+        // 若上一步saveRelativeInfoForCover()方法还没成功保存wmNews, 本方法通过id查询文章查不到
+        // 可以在查询文章id前设置一个线程睡眠1s
+
+        // 文章审核报错, 不会影响文章发布, 只是一直处于待审核的状态
+        // int a = 0;
+
         // 1.查询自媒体文章
         WmNews wmNews = wmNewsMapper.selectById(id);
         if(wmNews == null){
