@@ -10,7 +10,7 @@
     <!-- 引入样式文件 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.12.20/lib/index.css">
     <!-- 页面样式 -->
-    <link rel="stylesheet" href="../../../plugins/css/index.css">
+    <link rel="stylesheet" href="./plugins/css/index.css">
 </head>
 
 <body>
@@ -174,9 +174,9 @@
 <script src="https://cdn.jsdelivr.net/npm/vant@2.12.20/lib/vant.min.js"></script>
 <!-- 引入 Axios 的 JS 文件 -->
 <#--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
-<script src="../../../plugins/js/axios.min.js"></script>
+<script src="./plugins/js/axios.min.js"></script>
 <!-- 页面逻辑 -->
-<script src="../../../plugins/js/index.js"></script>
+<script src="./plugins/js/index.js"></script>
 </body>
 
 </html>

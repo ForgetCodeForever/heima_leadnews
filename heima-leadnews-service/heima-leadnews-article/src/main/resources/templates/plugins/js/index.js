@@ -4,7 +4,7 @@ new Vue({
   data() {
     return {
       // Minio模板应该写真实接口地址
-      baseUrl: 'http://192.168.200.150:51601', //'http://172.16.17.191:5001',
+      baseUrl: 'http://192.168.200.128:51601', //'http://172.16.17.191:5001',
       token: '',
       equipmentId: '',
       articleId: '',

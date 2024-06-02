@@ -5,5 +5,5 @@ import com.heima.model.article.pojos.ApArticleContent;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface ApAricleContentMapper extends BaseMapper<ApArticleContent> {
+public interface ApArticleContentMapper extends BaseMapper<ApArticleContent> {
 }
