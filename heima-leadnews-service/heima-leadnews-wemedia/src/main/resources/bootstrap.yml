@@ -11,6 +11,10 @@ spring:
         server-addr: 192.168.200.128:8848
         file-extension: yml
 
+tess4j:
+  data-path: E:\Project\JavaProject\heima-leadnews\heima-leadnews-test\tess4j-demo\test_data
+  language: chi_sim
+
 #spring:
 #  datasource:
 #    driver-class-name: com.mysql.jdbc.Driver
