@@ -2,4 +2,5 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   com.heima.common.exception.ExceptionCatch,\
   com.heima.common.swagger.SwaggerConfiguration,\
   com.heima.common.swagger.Swagger2Configuration,\
-  com.heima.common.test4j.Tess4jClient
+  com.heima.common.test4j.Tess4jClient,\
+  com.heima.common.redis.CacheService
