@@ -11,7 +11,7 @@ import com.heima.model.schedule.pojos.TaskinfoLogs;
 import com.heima.schedule.mapper.TaskinfoLogsMapper;
 import com.heima.schedule.mapper.TaskinfoMapper;
 import com.heima.schedule.service.TaskService;
-//import lombok.extern.slf4j.Slf4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -26,7 +26,7 @@ import java.util.Set;
 
 @Service
 @Transactional
-//@Slf4j
+@Slf4j
 public class TaskServiceImpl implements TaskService {
     /**
      * 添加延迟任务
