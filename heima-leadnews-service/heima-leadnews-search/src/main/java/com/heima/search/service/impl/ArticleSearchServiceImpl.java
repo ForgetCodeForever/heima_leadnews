@@ -4,7 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.heima.model.common.dtos.ResponseResult;
 import com.heima.model.common.enums.AppHttpCodeEnum;
 import com.heima.model.search.dtos.UserSearchDto;
+import com.heima.model.user.pojos.ApUser;
+import com.heima.search.service.ApUserSearchService;
 import com.heima.search.service.ArticleSearchService;
+import com.heima.utils.thread.AppThreadLocalUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.action.search.SearchRequest;
@@ -32,6 +35,9 @@ public class ArticleSearchServiceImpl implements ArticleSearchService {
     @Autowired
     private RestHighLevelClient restHighLevelClient;
 
+    @Autowired
+    private ApUserSearchService apUserSearchService;
+
     /**
      * es文章分页检索
      *
@@ -44,6 +50,14 @@ public class ArticleSearchServiceImpl implements ArticleSearchService {
         // 1.检查参数
         if(dto == null || StringUtils.isBlank(dto.getSearchWords())){
             return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
+        }
+
+        ApUser user = AppThreadLocalUtil.getUser();
+
+        // 异步调用: 保存搜索记录
+        // 未登录或搜索词只需在首页保存一次即可, 点击下一页也会调用该方法, 就不必保存了
+        if(user != null && dto.getFromIndex() == 0){
+            apUserSearchService.insert(dto.getSearchWords(), user.getId());
         }
 
         // 2.设置查询条件
