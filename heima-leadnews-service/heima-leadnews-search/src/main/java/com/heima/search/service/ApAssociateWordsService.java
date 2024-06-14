@@ -1,7 +1,7 @@
 package com.heima.search.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.heima.search.pojos.ApAssociateWords;
+import com.heima.model.common.dtos.ResponseResult;
+import com.heima.model.search.dtos.UserSearchDto;
 
 /**
  * <p>
@@ -10,7 +10,12 @@ import com.heima.search.pojos.ApAssociateWords;
  *
  * @author itheima
  */
-public interface ApAssociateWordsService extends IService<ApAssociateWords> {
+public interface ApAssociateWordsService {
 
-
+    /**
+     联想词
+     @param userSearchDto
+     @return
+     */
+    ResponseResult findAssociate(UserSearchDto userSearchDto);
 }
