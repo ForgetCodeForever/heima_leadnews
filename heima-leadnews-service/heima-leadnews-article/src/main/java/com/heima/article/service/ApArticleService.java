@@ -16,5 +16,14 @@ public interface ApArticleService extends IService<ApArticle> {
      */
     ResponseResult load(ArticleHomeDto dto, Short loadtype);
 
+    /**
+     *
+     * @param dto
+     * @param loadtype  1  加载更多  2  加载最新
+     * @param firstPage  true 首页  false 非首页
+     * @return
+     */
+    ResponseResult load_(ArticleHomeDto dto, Short loadtype, boolean firstPage);
+
     ResponseResult saveArticle(ArticleDto dto);
 }
